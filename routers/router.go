@@ -8,6 +8,7 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.MainController{})
+	beego.Router("/mail", &controllers.MailController{})
 
 	// beego.Router("/some", )
 }

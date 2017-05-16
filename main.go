@@ -1,21 +1,13 @@
 package main
 
 import (
+	_ "mailsender/models"
 	_ "mailsender/routers"
 
 	"github.com/jinzhu/gorm"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
-
-// User
-type User struct {
-	Id       int
-	name     string
-	email    string
-	password string
-	role     string
-}
 
 func main() {
 	// In order to handle time.Time, you need to include parseTime as a parameter.
@@ -24,7 +16,10 @@ func main() {
 		panic(err)
 
 	}
-	db.CreateTable("users")
+	u := db.HasTable("users")
+	if !u {
+		// db.AutoMigrate(&models.)
+	}
 	// beego.Run()
 }
 
