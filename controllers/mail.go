@@ -14,6 +14,13 @@ func (c *MailController) send(to string, subject string, mail string) {
 	fmt.Printf("Mail to %s. Subject: %s is sended.", to, subject)
 }
 
-func init() {
+// Get is a function
+func (c *MailController) Get() {
+	c.Data["Website"] = "beego.daniiltserin.ru"
+	c.Data["Email"] = "astaxie@gmail.com"
+	c.TplName = "index.tpl"
+}
 
+func (c *MailController) subscribe() {
+	c.Data["id"] = c.Ctx.Input.Param(":id")
 }

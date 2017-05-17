@@ -4,6 +4,7 @@ import (
 	_ "mailsender/models"
 	_ "mailsender/routers"
 
+	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -20,9 +21,6 @@ func main() {
 	if !u {
 		// db.AutoMigrate(&models.)
 	}
-	// beego.Run()
-}
 
-func init() {
-
+	beego.Run()
 }

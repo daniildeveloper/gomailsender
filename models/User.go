@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 
+	"github.com/astaxie/beego/orm"
 	"github.com/jinzhu/gorm"
 )
 
@@ -18,4 +19,8 @@ type User struct {
 
 func (u *User) say() {
 	fmt.Print("say")
+}
+
+func init() {
+	orm.RegisterModel(new(User))
 }
